@@ -8,13 +8,15 @@
 
 - 操作日志
 
-> 在需要记录操作日志的方法上添加注解
+> 在需要记录操作日志的方法上添加注解，例子：https://github.com/xkcoding/magic-starter-log-demo/blob/be5a26decb6339d0e0daddf5f24ce6ab63e234e9/src/main/java/com/xkcoding/magicstarterlogdemo/controller/TestController.java#L25
 
 ```java
 @OperateLog("操作日志内容")
 ```
 
 - 自定义日志
+
+> 例子：https://github.com/xkcoding/magic-starter-log-demo/blob/be5a26decb6339d0e0daddf5f24ce6ab63e234e9/src/main/java/com/xkcoding/magicstarterlogdemo/controller/TestController.java#L28
 
 ```java
 @Autowired
@@ -28,11 +30,16 @@ magicLogger.error("日志前缀", "日志内容");
 
 - 错误日志
 
+> 建议在全局拦截的地方触发，例子：https://github.com/xkcoding/magic-starter-log-demo/blob/be5a26decb6339d0e0daddf5f24ce6ab63e234e9/src/main/java/com/xkcoding/magicstarterlogdemo/handler/GlobalExceptionHandler.java#L23
+
 ```java
 LogEventPublisher.publishErrorLogEvent(exception);
 ```
 
 ### 2. 三种日志如何处理
+
+> 1. 继承 LogHandler 重写对应日志类型处理方法即可，例子：https://github.com/xkcoding/magic-starter-log-demo/blob/master/src/main/java/com/xkcoding/magicstarterlogdemo/config/support/DemoLogHandler.java
+> 2. 交给 Spring 容器管理，例子：https://github.com/xkcoding/magic-starter-log-demo/blob/master/src/main/java/com/xkcoding/magicstarterlogdemo/config/LogConfig.java
 
 ```java
 /**
