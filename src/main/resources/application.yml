@@ -1,0 +1,4 @@
+magic:
+  log:
+    request:
+      enabled: true
