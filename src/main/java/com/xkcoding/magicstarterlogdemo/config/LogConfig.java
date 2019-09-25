@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class LogConfig {
-    // @Bean
+    @Bean
     public LogHandler logHandler() {
         return new DemoLogHandler();
     }
