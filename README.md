@@ -77,3 +77,14 @@ magic:
     request:
       enabled: true
 ```
+
+### 4. 通用日志配置文件
+
+```yaml
+spring:
+  application:
+    name: magic-starter-log-demo
+logging:
+  config: classpath:com/xkcoding/magic/log/logback/logback-spring.xml
+```
+

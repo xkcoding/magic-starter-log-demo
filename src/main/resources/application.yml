@@ -2,3 +2,8 @@ magic:
   log:
     request:
       enabled: true
+spring:
+  application:
+    name: magic-starter-log-demo
+logging:
+  config: classpath:com/xkcoding/magic/log/logback/logback-spring.xml
